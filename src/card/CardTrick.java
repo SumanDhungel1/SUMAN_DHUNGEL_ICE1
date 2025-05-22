@@ -34,35 +34,53 @@ public class CardTrick {
         //insert code to ask the user for Card value and suit, create their card
         
 //         Ask the user for a card
-         Scanner scanner = new Scanner(System.in);
-         System.out.print("Enter a card value (1-13): ");
-         int userValue = scanner.nextInt();
-         scanner.nextLine(); 
-         System.out.print("Enter a suit (0-3 where 0=Hearts, 1=Diamonds, 2=clubs,3=spades): ");
-         String userSuit = scanner.nextLine();
-         Card userCard = new Card();
-         userCard.setSuit(userSuit);
-         userCard.setValue(userValue);
+//         Scanner scanner = new Scanner(System.in);
+//         System.out.print("Enter a card value (1-13): ");
+//         int userValue = scanner.nextInt();
+//         scanner.nextLine(); 
+//         System.out.print("Enter a suit (0-3 where 0=Hearts, 1=Diamonds, 2=clubs,3=spades): ");
+//         String userSuit = scanner.nextLine();
+//         Card userCard = new Card();
+//         userCard.setSuit(userSuit);
+//         userCard.setValue(userValue);
         
         // and search magicHand here
         
-         boolean found = false;
-           for (Card c : magicHand) {
-            if (c.getValue() == userCard.getValue() && c.getSuit().equalsIgnoreCase(userCard.getSuit())) {
-                found = true;
-                break;
-            }
-        }
+//         boolean found = false;
+//           for (Card c : magicHand) {
+//            if (c.getValue() == userCard.getValue() && c.getSuit().equalsIgnoreCase(userCard.getSuit())) {
+//                found = true;
+//                break;
+//            }
+//        }
         //Then report the result here
-         if(found){
-            System.out.println("Congratulations, Your Card was found in the magic hand.");
-        }else{
-            System.out.println("Sorry, your card is not in the magic hand.");
-        }
+//         if(found){
+//            System.out.println("Congratulations, Your Card was found in the magic hand.");
+//        }else{
+//            System.out.println("Sorry, your card is not in the magic hand.");
+//        }
         // add one luckcard hard code 2,clubs
         Card luckyCard = new Card();
       luckyCard.setValue(2);
       luckyCard.setSuit("Clubs");
-    }
     
+    
+       boolean found = false;
+           for (Card c : magicHand) {
+            if (c.getValue() == luckyCard.getValue() && c.getSuit().equalsIgnoreCase(luckyCard.getSuit())) {
+                found = true;
+                break;
+            }
+        }
+           
+           //Then report the result here
+         if(found){
+            System.out.println("Congratulations, YOu got a lucky card!");
+        }else{
+            System.out.println("Sorry, No lucky Card!");
+        }
+           
+           
+    
+}
 }
